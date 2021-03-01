@@ -1,45 +1,4 @@
-<style>
-  body, html {
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  #metal {
-    width: calc(100px * 8);
-    margin: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #metal > div {
-    --space: 5px;
-
-    height: calc(1rem + var(--space));
-    margin: var(--space);
-    padding: var(--sapce);
-    position: relative;
-    border-radius: calc(1rem + var(--space) * 2);
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  #metal > div > span {
-    margin: 15px;
-  }
-</style>
-
-<div id="metal">
-  <!-- Stuff -->
-</div>
-
-<script src="dtaa/happiness-2019.js"></script>
-<script src="data/games.js"></script>
-<script src="data/metal.js"></script>
-
-<script>
 
   // What's an array? Sometimes called a list. 
   // It's a list of things organized by index. 
@@ -57,76 +16,150 @@
 
 
 
-  console.log(metal.length)
-  console.log(metal[0])
-  console.log(metal[0].fans)
+//   console.log(metal.length)
+//   console.log(metal[0])
+//   console.log(metal[0].fans)
   
-  // Total fans
-  console.log(metal.reduce((fans, band) => {
-    return fans += band.fans
-  }, 0))
+//   // Total fans
+//   console.log(metal.reduce((fans, band) => {
+//     return fans += band.fans
+//   }, 0))
 
-  // Split
-  console.log(metal.filter((band) => {
-    return band.split === '-'
-  }).length)
+//   // Split
+//   console.log(metal.filter((band) => {
+//     return band.split === '-'
+//   }).length)
 
-  // Not Split
-  console.log(metal.filter((band) => {
-    return band.split !== '-'
-  }).length)
+//   // Not Split
+//   console.log(metal.filter((band) => {
+//     return band.split !== '-'
+//   }).length)
 
-  // By Country
-  const metalCountries = metal.reduce((countries, band) => {
-    console.log('>', band.origin)
-    if (countries[band.origin] !== undefined) {
-      countries[band.origin] += 1
-    } else {
-      countries[band.origin] = 1
-    }
-    return countries
-  }, {})
+//   // By Country
+//   const metalCountries = metal.reduce((countries, band) => {
+//     console.log('>', band.origin)
+//     if (countries[band.origin] !== undefined) {
+//       countries[band.origin] += 1
+//     } else {
+//       countries[band.origin] = 1
+//     }
+//     return countries
+//   }, {})
 
-  const maxFans = metal.reduce((max, band) => {
-    if (band.fans > max) {
-      return band.fans
-    }
-    return max
-  }, 0)
+//   const maxFans = metal.reduce((max, band) => {
+//     if (band.fans > max) {
+//       return band.fans
+//     }
+//     return max
+//   }, 0)
 
-  metal.sort((a, b) => {
-    if (a.split === '-') {
-      return -1
-    }
-    return 1
-  })
+//   metal.sort((a, b) => {
+//     if (a.split === '-') {
+//       return -1
+//     }
+//     return 1
+//   })
 
-  const els = metal.forEach((band, i) => {
-    const el = document.createElement('div')
-    el.innerHTML = `<span>${band.fans} ${band.name} </span>`
-    const size = band.fans / maxFans
-    el.style.width = `${size * 100}%`
-    // el.style.height = `${size * 100}%`
-    const hue = 360 / metal.length * i
-    const b = band.split === '-' ? '50%' : '75%'
-    el.style.backgroundColor = `hsl(${hue}, 50%, ${b})`
-    document.getElementById('metal').appendChild(el)
-  })
+//   const els = metal.forEach((band, i) => {
+//     const el = document.createElement('div')
+//     el.innerHTML = `<span>${band.fans} ${band.name} </span>`
+//     const size = band.fans / maxFans
+//     el.style.width = `${size * 100}%`
+//     // el.style.height = `${size * 100}%`
+//     const hue = 360 / metal.length * i
+//     const b = band.split === '-' ? '50%' : '75%'
+//     el.style.backgroundColor = `hsl(${hue}, 50%, ${b})`
+//     document.getElementById('metal').appendChild(el)
+//   })
 
-  console.log(metalCountries)
+//   console.log(metalCountries)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="./dist/assets/images/favicon-heart-whr.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<link
+  href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,700,900|Lora:400,700|Work+Sans:400,700&display=swap"
+  rel="stylesheet">
 
+<script src="data/happiness-2019.js"></script>
 
+  <link rel="stylesheet" href="./dist/stylesheets/style.css">
 
+  <title>World Happiness Report | Data Visualization</title>
+</head>
 
-  console.log('Length', data.length)
-  console.log(data[0])
-  console.log(data[0].corruption)
-  console.log(data[0].country)
-  console.log(data[0].freedom)
-  console.log(data[0].gdp)
-  console.log(data[0].generosity)
-  console.log(data[0].health)
-  console.log(data[0].rank)
-  console.log(data[0].score)
-  console.log(data[0].support)
-</script>
+<body>
+  <div class="modal-bg">
+    <div class="modal">
+      <div class="modal-close__btn"><i class="modal-close__btn-single fa fa-times"></i></div>
+      <h1 class="main__header">World <br />Happiness <br />Report <span><img src="./dist/assets/images/whr-heart.png"
+            alt="whr logo heart" class="header__img"></span>
+      </h1>
+      <div class="text">
+        <p class="main__description">
+          The <strong>World Happiness Report</strong> is a landmark survey of the state of global happiness that ranks <strong>156 countries</strong> by how happy their citizens perceive themselves to be.
+        </p>
+        <p class="main__description">
+          This year’s World Happiness Report focuses on <strong>happiness and the community</strong>: how happiness has evolved over the past
+          dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven
+          those changes.
+        </p>
+        <p class="main__description">
+          This tool allows you to explore the study, customize the statistics, and share the facts.
+        </p>
+      </div>
+      <br>
+      <div class="sources">
+        <p class="source__content">
+          Data provided by <a href="https://worldhappiness.report/ed/2019/" target="_blank" class="source__link">World
+            Happiness Report</a> and <a href="http://worldpopulationreview.com/" target="_blank" class="source__link">World
+            Population Review</a><br />Visualization created by <a href="GSCrawley.github.io/gideoncrawley/" target="_blank" class="source__link">Gideon Crawley</a>
+        </p>
+        <br />
+      </div>
+    </div>
+    
+  </div>
+  <div class="main__container--full">
+    <div class="header__container">
+      <div class="header__content">
+        <h1 class="main__header">World <br />Happiness <br />Report <span><img src="./dist/assets/images/whr-heart.png" alt="whr logo heart" class="header__img"></span></h1>     
+      </div>
+      <div class="header">
+        <div class="header__btn-group btn-group">
+          <a href="#" data-text="GDP per capita" class="btn-graphGdp header-graph__btn active">GDP per capita
+            <p class="nav__dropdown"><strong>Happiness</strong> x<br /><strong>GDP Per Capita</strong></p>
+          </a>
+          &nbsp;&nbsp;
+          <a href="#" data-text="Social Support" class="btn-graphSocialSupport header-graph__btn">Social Support
+            <p class="nav__dropdown"><strong>Happiness</strong> x<br /><strong>Social Support</strong></p>
+          </a>
+          &nbsp;&nbsp;
+          <a href="#" data-text="Generosity" class="btn-graphGenerosity header-graph__btn">Generosity
+            <p class="nav__dropdown"><strong>Happiness</strong> x<br /><strong>Generosity</strong></p>
+          </a>
+          &nbsp;&nbsp;
+          <a href="#" data-text="Life Expectancy" class="btn-graphLifeExpectancy header-graph__btn">Life Expectancy
+            <p class="nav__dropdown"><strong>Happiness</strong> x<br /><strong>Life Expectancy</strong></p>
+          </a>
+          
+          &nbsp;&nbsp;
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="graph__container">
+      <svg class="graph"></svg>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+  <script src="https://d3js.org/d3-format.v1.min.js"></script>
+  <script src="./dist/main.js"></script>
+</body>
+</html>
