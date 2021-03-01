@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 71e36d748fd220dc919cee298f2d607db28b0cd9
 # FEW 2.5 Data Visualization Final Assessment
 
 Your job is to present a report on world happiness. Use the data from the world happiness report on Kaggle: 
