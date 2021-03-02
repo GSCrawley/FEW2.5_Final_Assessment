@@ -1,0 +1,38 @@
+{
+  "name": "final_assessment",
+  "version": "1.0.0",
+  "description": "world happiness report 2019 data visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSCrawley/FEW2.5_Final_Assessment.git"
+  },
+  "keywords": [
+    "data",
+    "sorting",
+    "visualization",
+    "d3"
+  ],
+  "author": "Gideon Crawley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSCrawley/FEW2.5_Final_Assessment/issues"
+  },
+  "homepage": "https://github.com/GSCrawley/FEW2.5_Final_Assessment#readme",
+  "dependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.2",
+    "d3-scale": "^3.2.3",
+    "d3-scale-chromatic": "^2.0.0",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "topojson": "^3.0.2",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
